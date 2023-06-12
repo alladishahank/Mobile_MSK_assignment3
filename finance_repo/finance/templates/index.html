@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h2>Stock Portfolio</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"><b>Symbol</b></th>
+            <th scope="col"><b>Shares</b></th>
+            <th scope="col"><b>Price</b></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for result in results %}
+          <tr>
+            <td>{{ result["stock_symbol"]}}</td>
+            <td>{{ result["shares"]}}</td>
+            <td>{{ result["price"]}}</td>
+            <td></td>
+          </tr>
+        </tbody>
+        {% endfor %}
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Cash</td>
+                <td>{{ cash }}</td>
+            </tr>
+        </tfoot>
+      </table>
+    </table>
+{% endblock %}
